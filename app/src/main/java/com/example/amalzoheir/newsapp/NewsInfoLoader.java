@@ -20,7 +20,7 @@ public class NewsInfoLoader extends AsyncTaskLoader<ArrayList<NewsInfo>> {
     }
 
     @Override
-    protected void onForceLoad() {
+    protected void onStartLoading() {
         onForceLoad();
     }
 

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements LoaderCallbacks<ArrayList<NewsInfo>>{
     public static final String LOG_TAG = MainActivity.class.getName();
-    public static final String API_REQUEST_URL ="http://content.guardianapis.com/search?q=football&api-key=test&show-tags=contributor";
+    public static final String API_REQUEST_URL ="http://content.guardianapis.com/search?q=movies&api-key=test&show-tags=contributor";
     private NewsInfoAdapter madapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
