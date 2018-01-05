@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settins_title">News Info Settings</string>
+    <string name="settings_story_label">News Story</string>
+    <string name="settings_story_key" translatable="false">Choice Story</string>
+    <string name="settings_story_default" translatable="false">movies</string>
 </resources>

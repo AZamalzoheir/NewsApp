@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settins_title">
+    <EditTextPreference  android:defaultValue="@string/settings_story_default"
+        android:inputType="textNoSuggestions"
+        android:key="@string/settings_story_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_story_label"/>.
+
+</PreferenceScreen>
