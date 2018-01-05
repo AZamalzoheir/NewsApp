@@ -9,6 +9,7 @@ import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -53,11 +54,12 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<A
         String news= sharedPrefs.getString(getString(R.string.settings_story_key),getString(R.string.settings_story_default));
         Uri baseUri = Uri.parse(API_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        uriBuilder.appendQueryParameter("format", "geojson");
+      
         uriBuilder.appendQueryParameter("q",news);
         uriBuilder.appendQueryParameter("api-key","test");
         uriBuilder.appendQueryParameter("show-tag","contributor");
-        return new NewsInfoLoader(this,API_REQUEST_URL);
+        Log.v("My Tag","final"+uriBuilder.toString());
+        return new NewsInfoLoader(this,uriBuilder.toString());
     }
 
     @Override
