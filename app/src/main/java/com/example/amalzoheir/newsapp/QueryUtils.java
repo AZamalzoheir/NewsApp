@@ -36,7 +36,16 @@ public class QueryUtils {
                 JSONObject newsData=results.getJSONObject(i);
                 String titleOfArticle=newsData.getString("type");
                 String nameOfSecction=newsData.getString("sectionName");
-                NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction));
+                String webTitle=newsData.getString("webTitle");
+                String webUrl=newsData.getString("webUrl");
+                if(!newsData.isNull("webPublicationDate")&&!newsData.isNull("authorName")){
+                    String webPublicationDate=newsData.getString("webPublicationDate");
+                    String authorName=newsData.getString("authorName");
+                    NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction,webTitle,webUrl,authorName,webPublicationDate));
+                }
+                else {
+                    NewsInfosList.add(new NewsInfo(titleOfArticle, nameOfSecction, webTitle, webUrl));
+                }
             }
         }
         catch (JSONException e){

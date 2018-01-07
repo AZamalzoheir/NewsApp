@@ -12,6 +12,8 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,6 +29,16 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<A
         ListView newsInfoListView=(ListView)findViewById(R.id.list);
         madapter=new NewsInfoAdapter(this,new ArrayList<NewsInfo>());
         newsInfoListView.setAdapter(madapter);
+        newsInfoListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+                NewsInfo currentNewsInfo = madapter.getItem(position);
+                Uri newsInfoUri = Uri.parse(currentNewsInfo.getWebUrl());
+                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsInfoUri);
+                startActivity(websiteIntent);
+            }
+
+    });
         LoaderManager loaderManager=getLoaderManager();
         loaderManager.initLoader(1,null,this);
     }
@@ -54,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<A
         String news= sharedPrefs.getString(getString(R.string.settings_story_key),getString(R.string.settings_story_default));
         Uri baseUri = Uri.parse(API_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-      
         uriBuilder.appendQueryParameter("q",news);
         uriBuilder.appendQueryParameter("api-key","test");
         uriBuilder.appendQueryParameter("show-tag","contributor");

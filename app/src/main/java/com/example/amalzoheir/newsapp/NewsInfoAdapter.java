@@ -25,6 +25,12 @@ public class NewsInfoAdapter extends ArrayAdapter<NewsInfo> {
         titleOfArticleView.setText(currentNewsInfo.getTitleOfArticle());
         TextView nameOfSectionView=(TextView)listItemView.findViewById(R.id.name_of_section);
         nameOfSectionView.setText(currentNewsInfo.getNameOfSecction());
+        TextView webTitleView=(TextView)listItemView.findViewById(R.id.web_title);
+        webTitleView.setText(currentNewsInfo.getWebTitle());
+        TextView webPublishingView=(TextView)listItemView.findViewById(R.id.web_publishing_date);
+        webPublishingView.setText(currentNewsInfo.getpDate());
+        TextView authorNameView=(TextView)listItemView.findViewById(R.id.author_name);
+        authorNameView.setText(currentNewsInfo.getAuthorName());
         return listItemView;
     }
 }

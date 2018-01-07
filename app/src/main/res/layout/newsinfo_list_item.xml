@@ -8,13 +8,38 @@
         android:id="@+id/title_of_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="name" />
+        android:text="name"
+        android:layout_marginRight="2dp"/>
 
     <TextView
         android:id="@+id/name_of_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="title"
+        android:layout_marginRight="2dp"/>
+    <TextView
+        android:id="@+id/web_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="webtitle" />
+    <TextView
+        android:id="@+id/web_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="title" />
+        android:text="weburl"
+        android:layout_marginRight="2dp"/>
+    <TextView
+        android:id="@+id/web_publishing_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="webDate"
+        android:layout_marginRight="2dp"/>
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="authorName"
+        android:layout_marginRight="2dp"/>
 </LinearLayout>
