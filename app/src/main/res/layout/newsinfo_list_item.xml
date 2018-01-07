@@ -2,44 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#F5AD11">
 
     <TextView
         android:id="@+id/title_of_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="0.5"
         android:text="name"
-        android:layout_marginRight="2dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/name_of_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.5"
         android:text="title"
-        android:layout_marginRight="2dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
     <TextView
         android:id="@+id/web_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.5"
+        android:text="webtitle"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
-        android:text="webtitle" />
-    <TextView
-        android:id="@+id/web_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="weburl"
-        android:layout_marginRight="2dp"/>
     <TextView
         android:id="@+id/web_publishing_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.5"
         android:text="webDate"
-        android:layout_marginRight="2dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
     <TextView
         android:id="@+id/author_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.5"
         android:text="authorName"
-        android:layout_marginRight="2dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
 </LinearLayout>
