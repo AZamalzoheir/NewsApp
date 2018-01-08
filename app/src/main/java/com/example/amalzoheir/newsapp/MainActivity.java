@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,10 +36,16 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<A
                 NewsInfo currentNewsInfo = madapter.getItem(position);
                 Uri newsInfoUri = Uri.parse(currentNewsInfo.getWebUrl());
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsInfoUri);
-                startActivity(websiteIntent);
+                if(websiteIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(websiteIntent);
+                }
+                else{
+                    Toast.makeText(getBaseContext(),"can't open url",Toast.LENGTH_SHORT).show();
+                }
             }
 
     });
+
         LoaderManager loaderManager=getLoaderManager();
         loaderManager.initLoader(1,null,this);
     }
@@ -69,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<A
         uriBuilder.appendQueryParameter("q",news);
         uriBuilder.appendQueryParameter("api-key","test");
         uriBuilder.appendQueryParameter("show-tag","contributor");
-        Log.v("My Tag","final"+uriBuilder.toString());
         return new NewsInfoLoader(this,uriBuilder.toString());
     }
 

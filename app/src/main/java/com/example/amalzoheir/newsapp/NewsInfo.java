@@ -12,34 +12,22 @@ public class NewsInfo {
     private String webUrl;
     private String authorName;
     private String pDate;
-    public NewsInfo(String titleOfArticle,String nameOfSecction,String webTitle,String webUrl){
-        this.titleOfArticle=titleOfArticle;
-        this.nameOfSecction=nameOfSecction;
-        this.webTitle=webTitle;
+
+    public NewsInfo(String titleOfArticle, String nameOfSecction, String webTitle, String webUrl) {
+        this.titleOfArticle = titleOfArticle;
+        this.nameOfSecction = nameOfSecction;
+        this.webTitle = webTitle;
         this.webUrl = webUrl;
     }
-    /*public NewsInfo(String titleOfArticle,String nameOfSecction,String webTitle,String webUrl,String authorName){
-        this.titleOfArticle=titleOfArticle;
-        this.nameOfSecction=nameOfSecction;
-        this.webTitle=webTitle;
+
+    public NewsInfo(String titleOfArticle, String nameOfSecction, String webTitle, String webUrl,String pDate) {
+        this.titleOfArticle = titleOfArticle;
+        this.nameOfSecction = nameOfSecction;
+        this.webTitle = webTitle;
         this.webUrl = webUrl;
-        this.authorName=authorName;
-    }*/
-   /* public NewsInfo(String titleOfArticle,String nameOfSecction,String webTitle,String webUrl,String pDate){
-        this.titleOfArticle=titleOfArticle;
-        this.nameOfSecction=nameOfSecction;
-        this.webTitle=webTitle;
-        this.webUrl = webUrl;
-        this.pDate=pDate;
-    }*/
-    public NewsInfo(String titleOfArticle,String nameOfSecction,String webTitle,String webUrl,String authorName,String pDate){
-        this.titleOfArticle=titleOfArticle;
-        this.nameOfSecction=nameOfSecction;
-        this.webTitle=webTitle;
-        this.webUrl = webUrl;
-        this.authorName=authorName;
-        this.pDate=pDate;
+        this.pDate = pDate;
     }
+
     public String getAuthorName() {
         return authorName;
     }
@@ -73,10 +61,11 @@ public class NewsInfo {
         this.webUrl = webUrl;
     }
 
-    public String getTitleOfArticle(){
+    public String getTitleOfArticle() {
         return titleOfArticle;
     }
-    public String getNameOfSecction(){
+
+    public String getNameOfSecction() {
         return nameOfSecction;
     }
 }

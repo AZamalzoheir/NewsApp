@@ -38,10 +38,10 @@ public class QueryUtils {
                 String nameOfSecction=newsData.getString("sectionName");
                 String webTitle=newsData.getString("webTitle");
                 String webUrl=newsData.getString("webUrl");
-                if(!newsData.isNull("webPublicationDate")&&!newsData.isNull("authorName")){
+                if(!newsData.isNull("webPublicationDate")){
                     String webPublicationDate=newsData.getString("webPublicationDate");
-                    String authorName=newsData.getString("authorName");
-                    NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction,webTitle,webUrl,authorName,webPublicationDate));
+
+                    NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction,webTitle,webUrl,webPublicationDate));
                 }
                 else {
                     NewsInfosList.add(new NewsInfo(titleOfArticle, nameOfSecction, webTitle, webUrl));
