@@ -12,19 +12,12 @@ public class NewsInfo {
     private String webUrl;
     private String authorName;
     private String pDate;
-
-    public NewsInfo(String titleOfArticle, String nameOfSecction, String webTitle, String webUrl) {
+    public NewsInfo(String titleOfArticle, String nameOfSecction, String webTitle, String webUrl,String authorName,String pDate) {
         this.titleOfArticle = titleOfArticle;
         this.nameOfSecction = nameOfSecction;
         this.webTitle = webTitle;
         this.webUrl = webUrl;
-    }
-
-    public NewsInfo(String titleOfArticle, String nameOfSecction, String webTitle, String webUrl,String pDate) {
-        this.titleOfArticle = titleOfArticle;
-        this.nameOfSecction = nameOfSecction;
-        this.webTitle = webTitle;
-        this.webUrl = webUrl;
+        this.authorName=authorName;
         this.pDate = pDate;
     }
 

@@ -17,6 +17,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /**
  * Created by Amalzoheir on 12/18/2017.
@@ -36,16 +37,27 @@ public class QueryUtils {
                 JSONObject newsData=results.getJSONObject(i);
                 String titleOfArticle=newsData.getString("type");
                 String nameOfSecction=newsData.getString("sectionName");
-                String webTitle=newsData.getString("webTitle");
                 String webUrl=newsData.getString("webUrl");
-                if(!newsData.isNull("webPublicationDate")){
-                    String webPublicationDate=newsData.getString("webPublicationDate");
-
-                    NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction,webTitle,webUrl,webPublicationDate));
+                String webTitle=newsData.getString("webTitle");
+                String authorName;
+                String title;
+                String webPublicationDate;
+                if(webTitle.contains("|")){
+                    String[] webTitleContent=webTitle.split(Pattern.quote("|"));
+                    authorName=webTitleContent[0];
+                    title=webTitleContent[1];
                 }
                 else {
-                    NewsInfosList.add(new NewsInfo(titleOfArticle, nameOfSecction, webTitle, webUrl));
+                    title = webTitle;
+                    authorName = "";
                 }
+                if(!newsData.isNull("webPublicationDate")){
+                    webPublicationDate=newsData.getString("webPublicationDate");
+                }
+                else {
+                    webPublicationDate="";
+                }
+                NewsInfosList.add(new NewsInfo(titleOfArticle,nameOfSecction,title,webUrl,authorName,webPublicationDate));
             }
         }
         catch (JSONException e){
